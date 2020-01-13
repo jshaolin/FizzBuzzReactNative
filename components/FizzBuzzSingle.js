@@ -24,14 +24,45 @@ export default class FizzBuzzSingle extends Component {
                 >
                 </TextInput>
                 <Button title={'FizzBuzz?'}
-                    
+                    onPress = {() => {
+                        this.isFizzBuzz(this.state.number);
+                    }}
                 >
                 </Button>
             </View>
         );
     }
 
+    isFizzBuzz(number) {
+        let request = new XMLHttpRequest();
+        request.onreadystatechange = (e) => {
+            if (request.readyState !== 4) {
+                return;
+            }
+            
+            if (request.status === 200) {
+                console.log('Request done');
+                let result = request.response;
+                ToastAndroid.showWithGravity('Fetching done', ToastAndroid.SHORT, ToastAndroid.BOTTOM);
     
+                Alert.alert("Result", result);
+                if (result === 'Fizz' || result === 'Buzz') {
+                    Vibration.vibrate(500);
+                }
+                else if (result === 'FizzBuzz') {
+                    Vibration.vibrate([0, 500, 100, 500]);
+                }
+                return true;
+            } 
+            else {
+                console.log('NETWORK ERROR');
+                ToastAndroid.showWithGravity('Fetching failed', ToastAndroid.SHORT, ToastAndroid.BOTTOM);
+                return false;
+            }
+        };
+        request.open('GET', 'https://isfizzbuzz.glitch.me/test/' + number);
+        request.send();
+    }
 }
 
 const styles = StyleSheet.create({
