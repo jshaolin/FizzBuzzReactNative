@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import {Text} from 'react-native';
+import Nav from './components/Nav';
 
 export default class App extends Component {
 
   render() {
     return (
-      <Text>Hello React</Text>
+      <Nav></Nav>
     );
   }
 }
