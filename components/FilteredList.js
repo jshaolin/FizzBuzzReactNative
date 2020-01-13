@@ -65,8 +65,5 @@ const styles = StyleSheet.create({
     borderRadius: 5, 
     borderWidth: 2,
     paddingHorizontal: 5
-  },
-  listView : {
-    
   }
 });
