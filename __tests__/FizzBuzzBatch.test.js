@@ -235,30 +235,7 @@ describe('FizbuzzBuzzBatch', () => {
             expect(component.cache.size).toEqual(0);
         });
     });
-
     
-
-    /*describe('batchFizzBuzz Test', () => {
-        it('should correctly return an array of fizzbuzz objects', () => {
-            const fizzBuzz3_5 = batchFizzBuzz(3, 5);
-            expect(fizzBuzz3_5).toEqual(
-                [
-                    {
-                        number: 3,
-                        fizzbuzz: 'fizz'
-                    },
-                    {
-                        number: 5,
-                        fizzbuzz: 'buzz'
-                    }
-                ]
-            );
-
-            const fizzBuzz3_15 = batchFizzBuzz(3, 15);
-            expect(fizzBuzz3_15).toEqual(someFizzBuzz);
-        });
-    });*/
-
     describe('filterFizzBuzz Test', () => {
         const component = new FizzBuzzBatch({cacheLimit: 3});
         it('should correctly filter a fizzbuzz array', () => {
@@ -309,68 +286,4 @@ describe('FizbuzzBuzzBatch', () => {
             );
         });
     });
-
-    /*describe('The FizzBuzz Algorithm Tests', () => {
-        describe('isValidRange function', () => {
-            it('should correctly check the validity of a range.', () => {
-                const valid3_5 = isValidRange(3, 5);
-                expect(valid3_5).toEqual(true);
-
-                const valid5_3 = isValidRange(5, 3);
-                expect(valid5_3).toEqual(false);
-            });
-        });
-
-        describe('isInteger function', () => {
-            it('should correctly check if an argument is an integer value', () => {
-                const result1 = isInteger(1);
-                expect(result1).toEqual(true);
-
-                const result_a = isInteger('a');
-                expect(result_a).toEqual(false);
-            });
-        });
-
-        describe('isFizzBuzz function', () => {
-            it('should correctly determine the fizzbuzzbility of a number', () => {
-                const fizz = isFizzBuzz(3);
-                expect(fizz).toEqual('Fizz');
-
-                const buzz = isFizzBuzz(5);
-                expect(buzz).toEqual('Buzz');
-
-                const fizzbuzz = isFizzBuzz(15);
-                expect(fizzbuzz).toEqual('FizzBuzz');
-            });
-        });
-
-        describe('fizzBuzz function', () => {
-        it('should correctly return the fizzbuzzbility of a range of numbers', () => {
-                const fizzBuzz3_5 = fizzBuzz(3, 5);
-                expect(fizzBuzz3_5).toEqual(
-                [
-                    'Fizz',
-                    4,
-                    'Buzz'
-                ]
-            );
-
-            const fizzBuzz6_15 = fizzBuzz(6, 15);
-            expect(fizzBuzz6_15).toEqual(
-                    [
-                        'Fizz',
-                        7,
-                        8,
-                        'Fizz',
-                        'Buzz',
-                        11,
-                        'Fizz',
-                        13,
-                        14,
-                        'FizzBuzz'  
-                    ]
-                );
-            });
-        });
-    });*/
 });
