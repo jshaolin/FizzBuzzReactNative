@@ -52,12 +52,10 @@ export default class FizzBuzzSingle extends Component {
                 else if (result === 'FizzBuzz') {
                     Vibration.vibrate([0, 500, 100, 500]);
                 }
-                return true;
             } 
             else {
                 console.log('NETWORK ERROR');
                 ToastAndroid.showWithGravity('Fetching failed', ToastAndroid.SHORT, ToastAndroid.BOTTOM);
-                return false;
             }
         };
         request.open('GET', 'https://isfizzbuzz.glitch.me/test/' + number);
