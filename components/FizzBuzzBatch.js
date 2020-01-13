@@ -114,11 +114,7 @@ export default class FizzBuzzBatch extends Component {
     }
     
     isOrderedRange(from, to) {
-        if (from > to) {
-            return false;
-        }
-    
-        return true;
+        return from <= to;
     }
     
     toIntEndpoints(from, to) {
